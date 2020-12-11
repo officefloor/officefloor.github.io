@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Date-Revision-yyyymmdd" content="20201212" />
     <meta http-equiv="Content-Language" content="en" />
-    <title>OfficeFloor AppEngine Maven Plugin &#x2013; officefloor-appengine:stop</title>
+    <title>OfficeFloor AppEngine Maven Plugin &#x2013; officefloor-appengine:run</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.5.min.css" />
     <link rel="stylesheet" href="./css/site.css" />
     <link rel="stylesheet" href="./css/print.css" media="print" />
@@ -89,7 +89,7 @@
         OfficeFloor AppEngine Maven Plugin</a>
                     <span class="divider">/</span>
       </li>
-        <li class="active ">officefloor-appengine:stop</li>
+        <li class="active ">officefloor-appengine:run</li>
         
               
                   <li id="publishDate" class="pull-right"><span class="divider">|</span> Last Published: 2020-12-12</li>
@@ -135,24 +135,53 @@
             
   
     <div class="section">
-<h2><a name="officefloor-appengine:stop"></a>officefloor-appengine:stop</h2>
+<h2><a name="officefloor-appengine:run"></a>officefloor-appengine:run</h2>
       
 <p><b>Full name</b>:</p>
       
-<p>net.officefloor.maven:officefloor-appengine-maven-plugin:3.29.0:stop</p>
+<p>net.officefloor.maven:officefloor-appengine-maven-plugin:3.29.0:run</p>
       
 <p><b>Description</b>:</p>
       
-<div>Stops the AppEngine with Datastore for integration testing.</div>
+<div>Runs the AppEngine with Datastore for integration testing.</div>
       
 <p><b>Attributes</b>:</p>
       
 <ul>
         
 <li>Requires a Maven project to be executed.</li>
-        
-<li>Binds by default to the <a class="externalLink" href="http://maven.apache.org/ref/current/maven-core/lifecycles.html">lifecycle phase</a>: <tt>post-integration-test</tt>.</li>
       </ul>
+      
+<div class="section">
+<h3><a name="Required_Parameters"></a>Required Parameters</h3>
+        
+<table class="table table-striped" border="0">
+          
+<tr class="a">
+            
+<th>Name</th>
+            
+<th>Type</th>
+            
+<th>Since</th>
+            
+<th>Description</th>
+          </tr>
+          
+<tr class="b">
+            
+<td><tt><a href="#services">&lt;services&gt;</a></tt></td>
+            
+<td><tt>List</tt></td>
+            
+<td><tt>-</tt></td>
+            
+<td>Path to a yaml file, or a directory containing yaml files, or a
+directory containing WEB-INF/ web.xml. Defaults to
+<tt>${project.build.directory}/${project.build.finalName}</tt>.<br /><b>User property is</b>: <tt>app.devserver.services</tt>.<br /><b>Alias is</b>: <tt>devserver.services</tt>.</td>
+          </tr>
+        </table>
+      </div>
       
 <div class="section">
 <h3><a name="Optional_Parameters"></a>Optional Parameters</h3>
@@ -168,6 +197,29 @@
 <th>Since</th>
             
 <th>Description</th>
+          </tr>
+          
+<tr class="b">
+            
+<td><tt><a href="#additionalArguments">&lt;additionalArguments&gt;</a></tt></td>
+            
+<td><tt>List</tt></td>
+            
+<td><tt>-</tt></td>
+            
+<td>Environment variables passed to the devappserver process.<br /><b>User property is</b>: <tt>app.devserver.additionalArguments</tt>.<br /><b>Alias is</b>: <tt>devserver.additionalArguments</tt>.</td>
+          </tr>
+          
+<tr class="a">
+            
+<td><tt><a href="#automaticRestart">&lt;automaticRestart&gt;</a></tt></td>
+            
+<td><tt>Boolean</tt></td>
+            
+<td><tt>-</tt></td>
+            
+<td>Restart instances automatically when files relevant to their module
+are changed. (default: True)<br /><b>User property is</b>: <tt>app.devserver.automaticRestart</tt>.<br /><b>Alias is</b>: <tt>devserver.automaticRestart</tt>.</td>
           </tr>
           
 <tr class="b">
@@ -196,6 +248,39 @@ SDK.<br /><b>User property is</b>: <tt>cloudSdkVersion</tt>.<br /></td>
           
 <tr class="b">
             
+<td><tt><a href="#datastorePort">&lt;datastorePort&gt;</a></tt></td>
+            
+<td><tt>Integer</tt></td>
+            
+<td><tt>-</tt></td>
+            
+<td>Port to run the Datastore on.<br /><b>User property is</b>: <tt>datastorePort</tt>.<br /></td>
+          </tr>
+          
+<tr class="a">
+            
+<td><tt><a href="#defaultGcsBucketName">&lt;defaultGcsBucketName&gt;</a></tt></td>
+            
+<td><tt>String</tt></td>
+            
+<td><tt>-</tt></td>
+            
+<td>Default Google Cloud Storage bucket name. (default: None)<br /><b>User property is</b>: <tt>app.devserver.defaultGcsBucketName</tt>.<br /><b>Alias is</b>: <tt>devserver.defaultGcsBucketName</tt>.</td>
+          </tr>
+          
+<tr class="b">
+            
+<td><tt><a href="#environment">&lt;environment&gt;</a></tt></td>
+            
+<td><tt>Map</tt></td>
+            
+<td><tt>-</tt></td>
+            
+<td>Environment variables passed to the devappserver process.<br /><b>User property is</b>: <tt>app.devserver.environment</tt>.<br /><b>Alias is</b>: <tt>devserver.environment</tt>.</td>
+          </tr>
+          
+<tr class="a">
+            
 <td><tt><a href="#host">&lt;host&gt;</a></tt></td>
             
 <td><tt>String</tt></td>
@@ -204,6 +289,19 @@ SDK.<br /><b>User property is</b>: <tt>cloudSdkVersion</tt>.<br /></td>
             
 <td>Host name to which application modules should bind. (default:
 localhost)<br /><b>User property is</b>: <tt>app.devserver.host</tt>.<br /><b>Alias is</b>: <tt>devserver.host</tt>.</td>
+          </tr>
+          
+<tr class="b">
+            
+<td><tt><a href="#jvmFlags">&lt;jvmFlags&gt;</a></tt></td>
+            
+<td><tt>List</tt></td>
+            
+<td><tt>-</tt></td>
+            
+<td>Additional arguments to pass to the java command when launching an
+instance of the app. May be specified more than once. Example:
+&quot;-Xmx1024m -Xms256m&quot; (default: None)<br /><b>User property is</b>: <tt>app.devserver.jvmFlags</tt>.<br /><b>Alias is</b>: <tt>devserver.jvmFlags</tt>.</td>
           </tr>
           
 <tr class="a">
@@ -220,6 +318,18 @@ localhost)<br /><b>User property is</b>: <tt>app.devserver.host</tt>.<br /><b>Al
           
 <tr class="b">
             
+<td><tt><a href="#projectId">&lt;projectId&gt;</a></tt></td>
+            
+<td><tt>String</tt></td>
+            
+<td><tt>-</tt></td>
+            
+<td>The Google Cloud Platform project name to use for this invocation
+of the devserver.<br /><b>User property is</b>: <tt>app.devserver.projectId</tt>.<br /><b>Alias is</b>: <tt>devserver.projectId</tt>.</td>
+          </tr>
+          
+<tr class="a">
+            
 <td><tt><a href="#serviceAccountKeyFile">&lt;serviceAccountKeyFile&gt;</a></tt></td>
             
 <td><tt>File</tt></td>
@@ -230,7 +340,7 @@ localhost)<br /><b>User property is</b>: <tt>app.devserver.host</tt>.<br /><b>Al
 authentication.<br /><b>User property is</b>: <tt>serviceAccountKeyFile</tt>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td><tt><a href="#skip">&lt;skip&gt;</a></tt></td>
             
@@ -241,7 +351,7 @@ authentication.<br /><b>User property is</b>: <tt>serviceAccountKeyFile</tt>.<br
 <td>(no description)<br /><b>Default value is</b>: <tt>false</tt>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td><tt><a href="#verbosity">&lt;verbosity&gt;</a></tt></td>
             
@@ -257,6 +367,37 @@ authentication.<br /><b>User property is</b>: <tt>serviceAccountKeyFile</tt>.<br
 <div class="section">
 <h3><a name="Parameter_Details"></a>Parameter Details</h3>
         
+<div class="section">
+<h4><a name="a.3CadditionalArguments.3E"></a><b><a name="additionalArguments">&lt;additionalArguments&gt;</a></b></h4>
+        
+<div>Environment variables passed to the devappserver process.</div>
+        
+<ul>
+          
+<li><b>Type</b>: <tt>java.util.List</tt></li>
+          
+<li><b>Required</b>: <tt>No</tt></li>
+          
+<li><b>User Property</b>: <tt>app.devserver.additionalArguments</tt></li>
+          
+<li><b>Alias</b>: <tt>devserver.additionalArguments</tt></li>
+        </ul><hr /></div>
+<div class="section">
+<h4><a name="a.3CautomaticRestart.3E"></a><b><a name="automaticRestart">&lt;automaticRestart&gt;</a></b></h4>
+        
+<div>Restart instances automatically when files relevant to their module
+are changed. (default: True)</div>
+        
+<ul>
+          
+<li><b>Type</b>: <tt>java.lang.Boolean</tt></li>
+          
+<li><b>Required</b>: <tt>No</tt></li>
+          
+<li><b>User Property</b>: <tt>app.devserver.automaticRestart</tt></li>
+          
+<li><b>Alias</b>: <tt>devserver.automaticRestart</tt></li>
+        </ul><hr /></div>
 <div class="section">
 <h4><a name="a.3CcloudSdkHome.3E"></a><b><a name="cloudSdkHome">&lt;cloudSdkHome&gt;</a></b></h4>
         
@@ -286,6 +427,49 @@ SDK.</div>
 <li><b>User Property</b>: <tt>cloudSdkVersion</tt></li>
         </ul><hr /></div>
 <div class="section">
+<h4><a name="a.3CdatastorePort.3E"></a><b><a name="datastorePort">&lt;datastorePort&gt;</a></b></h4>
+        
+<div>Port to run the Datastore on.</div>
+        
+<ul>
+          
+<li><b>Type</b>: <tt>java.lang.Integer</tt></li>
+          
+<li><b>Required</b>: <tt>No</tt></li>
+          
+<li><b>User Property</b>: <tt>datastorePort</tt></li>
+        </ul><hr /></div>
+<div class="section">
+<h4><a name="a.3CdefaultGcsBucketName.3E"></a><b><a name="defaultGcsBucketName">&lt;defaultGcsBucketName&gt;</a></b></h4>
+        
+<div>Default Google Cloud Storage bucket name. (default: None)</div>
+        
+<ul>
+          
+<li><b>Type</b>: <tt>java.lang.String</tt></li>
+          
+<li><b>Required</b>: <tt>No</tt></li>
+          
+<li><b>User Property</b>: <tt>app.devserver.defaultGcsBucketName</tt></li>
+          
+<li><b>Alias</b>: <tt>devserver.defaultGcsBucketName</tt></li>
+        </ul><hr /></div>
+<div class="section">
+<h4><a name="a.3Cenvironment.3E"></a><b><a name="environment">&lt;environment&gt;</a></b></h4>
+        
+<div>Environment variables passed to the devappserver process.</div>
+        
+<ul>
+          
+<li><b>Type</b>: <tt>java.util.Map</tt></li>
+          
+<li><b>Required</b>: <tt>No</tt></li>
+          
+<li><b>User Property</b>: <tt>app.devserver.environment</tt></li>
+          
+<li><b>Alias</b>: <tt>devserver.environment</tt></li>
+        </ul><hr /></div>
+<div class="section">
 <h4><a name="a.3Chost.3E"></a><b><a name="host">&lt;host&gt;</a></b></h4>
         
 <div>Host name to which application modules should bind. (default:
@@ -300,6 +484,23 @@ localhost)</div>
 <li><b>User Property</b>: <tt>app.devserver.host</tt></li>
           
 <li><b>Alias</b>: <tt>devserver.host</tt></li>
+        </ul><hr /></div>
+<div class="section">
+<h4><a name="a.3CjvmFlags.3E"></a><b><a name="jvmFlags">&lt;jvmFlags&gt;</a></b></h4>
+        
+<div>Additional arguments to pass to the java command when launching an
+instance of the app. May be specified more than once. Example:
+&quot;-Xmx1024m -Xms256m&quot; (default: None)</div>
+        
+<ul>
+          
+<li><b>Type</b>: <tt>java.util.List</tt></li>
+          
+<li><b>Required</b>: <tt>No</tt></li>
+          
+<li><b>User Property</b>: <tt>app.devserver.jvmFlags</tt></li>
+          
+<li><b>Alias</b>: <tt>devserver.jvmFlags</tt></li>
         </ul><hr /></div>
 <div class="section">
 <h4><a name="a.3Cport.3E"></a><b><a name="port">&lt;port&gt;</a></b></h4>
@@ -318,6 +519,22 @@ localhost)</div>
 <li><b>Alias</b>: <tt>devserver.port</tt></li>
         </ul><hr /></div>
 <div class="section">
+<h4><a name="a.3CprojectId.3E"></a><b><a name="projectId">&lt;projectId&gt;</a></b></h4>
+        
+<div>The Google Cloud Platform project name to use for this invocation
+of the devserver.</div>
+        
+<ul>
+          
+<li><b>Type</b>: <tt>java.lang.String</tt></li>
+          
+<li><b>Required</b>: <tt>No</tt></li>
+          
+<li><b>User Property</b>: <tt>app.devserver.projectId</tt></li>
+          
+<li><b>Alias</b>: <tt>devserver.projectId</tt></li>
+        </ul><hr /></div>
+<div class="section">
 <h4><a name="a.3CserviceAccountKeyFile.3E"></a><b><a name="serviceAccountKeyFile">&lt;serviceAccountKeyFile&gt;</a></b></h4>
         
 <div>Optional parameter to configure the key file used for gcloud
@@ -330,6 +547,23 @@ authentication.</div>
 <li><b>Required</b>: <tt>No</tt></li>
           
 <li><b>User Property</b>: <tt>serviceAccountKeyFile</tt></li>
+        </ul><hr /></div>
+<div class="section">
+<h4><a name="a.3Cservices.3E"></a><b><a name="services">&lt;services&gt;</a></b></h4>
+        
+<div>Path to a yaml file, or a directory containing yaml files, or a
+directory containing WEB-INF/ web.xml. Defaults to
+<tt>${project.build.directory}/${project.build.finalName}</tt>.</div>
+        
+<ul>
+          
+<li><b>Type</b>: <tt>java.util.List</tt></li>
+          
+<li><b>Required</b>: <tt>Yes</tt></li>
+          
+<li><b>User Property</b>: <tt>app.devserver.services</tt></li>
+          
+<li><b>Alias</b>: <tt>devserver.services</tt></li>
         </ul><hr /></div>
 <div class="section">
 <h4><a name="a.3Cskip.3E"></a><b><a name="skip">&lt;skip&gt;</a></b></h4>
