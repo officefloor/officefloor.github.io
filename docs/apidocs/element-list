@@ -88,6 +88,7 @@ net.officefloor.configuration
 net.officefloor.configuration.impl
 net.officefloor.configuration.impl.configuration
 net.officefloor.dependency
+net.officefloor.docker.test
 net.officefloor.eclipse.bridge
 net.officefloor.eclipse.configurer.test
 net.officefloor.eclipse.editor.test
@@ -235,6 +236,8 @@ net.officefloor.model.repository
 net.officefloor.model.section
 net.officefloor.model.test.changes
 net.officefloor.model.test.variable
+net.officefloor.nosql.dynamodb
+net.officefloor.nosql.dynamodb.test
 net.officefloor.nosql.objectify
 net.officefloor.nosql.objectify.mock
 net.officefloor.pay.paypal
@@ -289,6 +292,8 @@ net.officefloor.scalatest
 net.officefloor.script
 net.officefloor.script.graalvm
 net.officefloor.server
+net.officefloor.server.appengine
+net.officefloor.server.appengine.emulator
 net.officefloor.server.buffer
 net.officefloor.server.filesystem
 net.officefloor.server.http
@@ -333,9 +338,11 @@ net.officefloor.tutorial.dipojohttpserver.constructor
 net.officefloor.tutorial.dipojohttpserver.field
 net.officefloor.tutorial.dipojohttpserver.setter
 net.officefloor.tutorial.dynamichttpserver
+net.officefloor.tutorial.dynamodbhttpserver
 net.officefloor.tutorial.environmenthttpserver
 net.officefloor.tutorial.exceptionhttpserver
 net.officefloor.tutorial.flywayhttpserver
+net.officefloor.tutorial.googleappenginehttpserver
 net.officefloor.tutorial.googlesigninhttpserver
 net.officefloor.tutorial.httpservlet
 net.officefloor.tutorial.inherithttpserver
@@ -352,6 +359,7 @@ net.officefloor.tutorial.loggerhttpserver
 net.officefloor.tutorial.navigatehttpserver
 net.officefloor.tutorial.objectifyhttpserver
 net.officefloor.tutorial.paypalhttpserver
+net.officefloor.tutorial.r2dbchttpserver
 net.officefloor.tutorial.rawhttpserver
 net.officefloor.tutorial.reactorhttpserver
 net.officefloor.tutorial.resthttpserver
