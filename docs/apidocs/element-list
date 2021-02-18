@@ -294,6 +294,7 @@ net.officefloor.script.graalvm
 net.officefloor.server
 net.officefloor.server.appengine
 net.officefloor.server.appengine.emulator
+net.officefloor.server.aws.sam
 net.officefloor.server.buffer
 net.officefloor.server.filesystem
 net.officefloor.server.http
@@ -304,6 +305,7 @@ net.officefloor.server.http.parse
 net.officefloor.server.http.servlet
 net.officefloor.server.http.stream
 net.officefloor.server.http.undertow
+net.officefloor.server.servlet.test
 net.officefloor.server.ssl
 net.officefloor.server.stream
 net.officefloor.server.stream.impl
@@ -331,6 +333,7 @@ net.officefloor.test.skip
 net.officefloor.test.system
 net.officefloor.tutorial.activityhttpserver
 net.officefloor.tutorial.authenticationhttpserver
+net.officefloor.tutorial.awssamhttpserver
 net.officefloor.tutorial.corshttpserver
 net.officefloor.tutorial.databasehttpserver
 net.officefloor.tutorial.dipojohttpserver
