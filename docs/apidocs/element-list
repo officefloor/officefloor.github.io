@@ -236,6 +236,8 @@ net.officefloor.model.repository
 net.officefloor.model.section
 net.officefloor.model.test.changes
 net.officefloor.model.test.variable
+net.officefloor.nosql.cosmosdb
+net.officefloor.nosql.cosmosdb.test
 net.officefloor.nosql.dynamodb
 net.officefloor.nosql.dynamodb.test
 net.officefloor.nosql.objectify
@@ -335,6 +337,8 @@ net.officefloor.tutorial.activityhttpserver
 net.officefloor.tutorial.authenticationhttpserver
 net.officefloor.tutorial.awssamhttpserver
 net.officefloor.tutorial.corshttpserver
+net.officefloor.tutorial.cosmosasyncdbhttpserver
+net.officefloor.tutorial.cosmosdbhttpserver
 net.officefloor.tutorial.databasehttpserver
 net.officefloor.tutorial.dipojohttpserver
 net.officefloor.tutorial.dipojohttpserver.constructor
