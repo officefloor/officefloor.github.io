@@ -102,14 +102,14 @@ public class MyApplication {
 <td style="text-align: left;"><code>@PostMapping(&quot;/owners&quot;)</code></td>
 <td style="text-align: left;"><code>owners.POST.yml</code></td></tr>
 <tr class="b">
-<td style="text-align: left;"><code>@PutMapping(&quot;/owners/<a id="id">id</a>&quot;)</code></td>
-<td style="text-align: left;"><code>owners/<a id="id">id</a>.PUT.yml</code></td></tr>
+<td style="text-align: left;"><code>@PutMapping(&quot;/owners/{id}&quot;)</code></td>
+<td style="text-align: left;"><code>owners/{id}.PUT.yml</code></td></tr>
 <tr class="a">
-<td style="text-align: left;"><code>@DeleteMapping(&quot;/owners/<a id="id">id</a>&quot;)</code></td>
-<td style="text-align: left;"><code>owners/<a id="id">id</a>.DELETE.yml</code></td></tr>
+<td style="text-align: left;"><code>@DeleteMapping(&quot;/owners/{id}&quot;)</code></td>
+<td style="text-align: left;"><code>owners/{id}.DELETE.yml</code></td></tr>
 <tr class="b">
-<td style="text-align: left;"><code>@GetMapping(&quot;/owners/<a id="ownerId">ownerId</a>/pets/<a id="petId">petId</a>&quot;)</code></td>
-<td style="text-align: left;"><code>owners/<a id="ownerId">ownerId</a>/pets/<a id="petId">petId</a>.GET.yml</code></td></tr></table>
+<td style="text-align: left;"><code>@GetMapping(&quot;/owners/{ownerId}/pets/{petId}&quot;)</code></td>
+<td style="text-align: left;"><code>owners/{ownerId}/pets/{petId}.GET.yml</code></td></tr></table>
 <p>Nested resource paths follow the same directory convention &#x2014; the YAML file path mirrors the URL structure. Both variables are available to the service method. Use <code>@PathVariable(name = &quot;&#x2026;&quot;)</code> &#x2014; not the shorthand <code>@PathVariable(&quot;&#x2026;&quot;)</code> &#x2014; for the reason explained in the path parameters section below:</p>
 <pre class="prettyprint"><code>// Spring &#x2014; nested resource with two path variables
 @GetMapping(&quot;/owners/{ownerId}/pets/{petId}&quot;)
