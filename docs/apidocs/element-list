@@ -5,6 +5,7 @@ net.officefloor.activity.admin.build
 net.officefloor.activity.compose
 net.officefloor.activity.compose.build
 net.officefloor.activity.compose.section
+net.officefloor.activity.escalation.build
 net.officefloor.activity.govern
 net.officefloor.activity.govern.build
 net.officefloor.activity.impl.procedure
